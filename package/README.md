@@ -3,8 +3,10 @@
 Core components and utilities for Fireact applications.
 
 ## Table of Contents
+- [Setup Firebase](#setup-firebase)
 - [Installation](#installation)
 - [Project Setup](#project-setup)
+  - [Setting Up a React App with TypeScript](#setting-up-a-react-app-with-typescript)
   - [Tailwind CSS Configuration](#tailwind-css-configuration)
   - [Firebase Configuration](#firebase-configuration)
   - [Social Login Configuration](#social-login-configuration)
@@ -14,6 +16,46 @@ Core components and utilities for Fireact applications.
 - [Firebase Deployment](#firebase-deployment)
 - [Components Reference](#components-reference)
 - [License](#license)
+
+## Setup Firebase
+
+1. **Create a Firebase project**:
+   - Go to the [Firebase Console](https://console.firebase.google.com/).
+   - Click on "Add project" and follow the prompts to create a new project.
+
+2. **Set up a web app**:
+   - In your Firebase project, click on the web icon (</>) to add a web app.
+   - Follow the instructions to register your app. The web app settings will be used for the `config.json` file later.
+
+3. **Enable email/password authentication**:
+   - In the Firebase Console, navigate to "Authentication" > "Sign-in method".
+   - Enable "Email/Password" as a sign-in provider.
+
+4. **Enable other social authentication methods (optional)**:
+   - In the same "Sign-in method" section, you can enable other providers like Google, Facebook, etc., if needed.
+
+5. **Enable Firestore and copy the Firestore rules**:
+   - Navigate to "Firestore Database" in the Firebase Console.
+   - Click on "Create database" and follow the prompts to set up Firestore.
+   - Copy the Firestore rules from the example below.
+
+   Example Firestore rules:
+   ```plaintext
+    rules_version = '2';
+
+    service cloud.firestore {
+      match /databases/{database}/documents {
+        // Allow authenticated users to read and write their own user document
+        match /users/{userId} {
+          allow read, write: if request.auth != null && request.auth.uid == userId;
+        }
+      }
+    }
+   ```
+
+6. **Enable hosting**:
+   - In the Firebase Console, navigate to "Hosting".
+   - Click on "Get Started" and follow the prompts to set up Firebase Hosting for your project.
 
 ## Installation
 
@@ -28,6 +70,55 @@ npm install firebase react-router-dom i18next react-i18next @headlessui/react@^1
 ```
 
 Note: Make sure to use @headlessui/react version ^1.7.15 as it's a required peer dependency.
+
+## Project Setup
+
+### Setting Up a React App with TypeScript
+
+1. Create a new React app with TypeScript:
+```bash
+npx create-react-app my-app --template typescript
+```
+
+2. Navigate into your project directory:
+```bash
+cd my-app
+```
+
+3. Install necessary dependencies:
+```bash
+npm install @fireact.dev/core firebase react-router-dom i18next react-i18next @headlessui/react @heroicons/react tailwindcss i18next-browser-languagedetector
+```
+
+4. Set up Tailwind CSS:
+   - Initialize Tailwind:
+   ```bash
+   npx tailwindcss init
+   ```
+   - Update your `tailwind.config.js`:
+   ```javascript
+   /** @type {import('tailwindcss').Config} */
+   module.exports = {
+     content: [
+       "./src/**/*.{js,jsx,ts,tsx}",
+       "./node_modules/@fireact.dev/core/dist/**/*.{js,mjs}"
+     ],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   }
+   ```
+   - Add Tailwind directives to your `src/index.css`:
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+5. Create your main application file `src/main.tsx` and set up your app as shown in the Application Setup section below.
+
+6. Follow the remaining setup instructions in the Project Setup section to configure Firebase, social login, and internationalization.
 
 ## Project Setup
 
