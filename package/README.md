@@ -133,7 +133,7 @@ src/
 ```
 
 2. Download the base language files from:
-https://github.com/chaoming/fireact/tree/main/src/i18n/locales
+https://github.com/fireact-dev/core/tree/main/src/i18n/locales
 
 3. Adding or modifying labels:
 Each language file (e.g., en.ts) follows this structure:
