@@ -6,8 +6,6 @@ Core components and utilities for Fireact applications.
 - [Setup Firebase](#setup-firebase)
 - [Installation](#installation)
 - [Project Setup](#project-setup)
-  - [Setting Up a React App with TypeScript](#setting-up-a-react-app-with-typescript)
-  - [Tailwind CSS Configuration](#tailwind-css-configuration)
   - [Firebase Configuration](#firebase-configuration)
   - [Social Login Configuration](#social-login-configuration)
   - [Internationalization Setup](#internationalization-setup)
@@ -59,25 +57,9 @@ Core components and utilities for Fireact applications.
 
 ## Installation
 
+1. Create a new Vite app with TypeScript:
 ```bash
-npm install @fireact.dev/core
-```
-
-Install the required peer dependencies:
-
-```bash
-npm install firebase react-router-dom i18next react-i18next @headlessui/react@^1.7.15 @heroicons/react tailwindcss i18next-browser-languagedetector
-```
-
-Note: Make sure to use @headlessui/react version ^1.7.15 as it's a required peer dependency.
-
-## Project Setup
-
-### Setting Up a React App with TypeScript
-
-1. Create a new React app with TypeScript:
-```bash
-npx create-react-app my-app --template typescript
+npm create vite@latest my-app -- --template react-ts
 ```
 
 2. Navigate into your project directory:
@@ -89,6 +71,8 @@ cd my-app
 ```bash
 npm install @fireact.dev/core firebase react-router-dom i18next react-i18next @headlessui/react @heroicons/react tailwindcss i18next-browser-languagedetector
 ```
+
+Note: Make sure to use @headlessui/react version ^1.7.15 as it's a required peer dependency.
 
 4. Set up Tailwind CSS:
    - Initialize Tailwind:
@@ -115,41 +99,25 @@ npm install @fireact.dev/core firebase react-router-dom i18next react-i18next @h
    @tailwind components;
    @tailwind utilities;
    ```
+   - Create `postcss.config.js` in your project root:
+   ```javascript
+   export default {
+     plugins: {
+       tailwindcss: {},
+       autoprefixer: {},
+     },
+   }
+   ```
+   - Install PostCSS dependencies:
+   ```bash
+   npm install -D autoprefixer postcss
+   ```
 
 5. Create your main application file `src/main.tsx` and set up your app as shown in the Application Setup section below.
 
 6. Follow the remaining setup instructions in the Project Setup section to configure Firebase, social login, and internationalization.
 
 ## Project Setup
-
-### Tailwind CSS Configuration
-
-1. Initialize Tailwind:
-```bash
-npx tailwindcss init
-```
-
-2. Update your `tailwind.config.js`:
-```javascript
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/@fireact.dev/core/dist/**/*.{js,mjs}"
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-3. Add Tailwind directives to your `src/index.css`:
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
 
 ### Firebase Configuration
 
