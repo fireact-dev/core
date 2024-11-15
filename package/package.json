@@ -1,7 +1,7 @@
 {
   "name": "@fireact.dev/core",
   "version": "1.1.0",
-  "description": "Core components and utilities for fireact.devapplications",
+  "description": "Core components and utilities for fireact.dev applications",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
