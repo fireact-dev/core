@@ -1,6 +1,6 @@
 # @fireact.dev/core
 
-Core components and utilities for fireact.devapplications.
+Core components and utilities for fireact.dev applications.
 
 ## Table of Contents
 - [Setup Firebase](#setup-firebase)

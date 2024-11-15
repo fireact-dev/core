@@ -1,6 +1,6 @@
 # Fireact
 
-fireact.devis a React web application built with TypeScript, TailwindCSS, and Firebase Authentication. This project provides user sign-up, sign-in, and password reset functionalities, along with a user dashboard.
+fireact.dev is a React web application built with TypeScript, TailwindCSS, and Firebase Authentication. This project provides user sign-up, sign-in, and password reset functionalities, along with a user dashboard.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
