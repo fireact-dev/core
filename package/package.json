@@ -1,7 +1,7 @@
 {
   "name": "@fireact.dev/core",
-  "version": "1.1.0",
-  "description": "Core components and utilities for fireact.dev applications",
+  "version": "1.1.1",
+  "description": "A comprehensive React component library and utility collection for building Firebase-powered applications. Features authentication components, Firebase integration utilities, and TailwindCSS-styled UI elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -21,6 +21,12 @@
   ],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fireact-dev/core/tree/main/package"
+  },
+  "homepage": "https://fireact.dev",
+  "documentation": "https://fireact.dev/core",
   "publishConfig": {
     "access": "public"
   },
