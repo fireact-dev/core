@@ -82,7 +82,7 @@ Note: Make sure to use @headlessui/react version ^1.7.15 as it's a required peer
    - Update your `tailwind.config.js`:
    ```javascript
    /** @type {import('tailwindcss').Config} */
-   module.exports = {
+   export default {
      content: [
        "./src/**/*.{js,jsx,ts,tsx}",
        "./node_modules/@fireact.dev/core/dist/**/*.{js,mjs}"
