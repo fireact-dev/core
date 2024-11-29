@@ -160,7 +160,7 @@ Create `src/config.json` with your Firebase configuration:
     "ports": {
       "auth": 9099,
       "firestore": 8080,
-      "functions": 5555,
+      "functions": 5001,
       "hosting": 5002
     }
   }
@@ -366,7 +366,7 @@ To use Firebase Emulators for local development and testing:
     "ports": {
       "auth": 9099,
       "firestore": 8080,
-      "functions": 5555,
+      "functions": 5001,
       "hosting": 5002
     }
   }
@@ -386,7 +386,7 @@ To use Firebase Emulators for local development and testing:
       "host": "127.0.0.1"
     },
     "functions": {
-      "port": 5555,
+      "port": 5001,
       "host": "127.0.0.1"
     },
     "hosting": {
