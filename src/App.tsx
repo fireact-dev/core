@@ -9,6 +9,7 @@ import Profile from './components/Profile';
 import EditName from './components/EditName';
 import EditEmail from './components/EditEmail';
 import ResetPassword from './components/ResetPassword';
+import FirebaseAuthActions from './components/FirebaseAuthActions';
 import ChangePassword from './components/ChangePassword';
 import DeleteAccount from './components/DeleteAccount';
 import AuthenticatedLayout from './layouts/AuthenticatedLayout';
@@ -68,6 +69,7 @@ function App() {
                 <Route path={config.pages.signIn} element={<SignIn />} />
                 <Route path={config.pages.signUp} element={<SignUp />} />
                 <Route path={config.pages.resetPassword} element={<ResetPassword />} />
+                <Route path={config.pages.firebaseActions} element={<FirebaseAuthActions />} />
               </Route>
             </Routes>
           </LoadingProvider>

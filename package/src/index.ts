@@ -6,6 +6,7 @@ export { default as DeleteAccount } from './components/DeleteAccount';
 export { default as DesktopMenuItems } from './components/DesktopMenuItems';
 export { default as EditEmail } from './components/EditEmail';
 export { default as EditName } from './components/EditName';
+export { default as FirebaseAuthActions } from './components/FirebaseAuthActions';
 export { default as LanguageSwitcher } from './components/LanguageSwitcher';
 export { default as Logo } from './components/Logo';
 export { default as Message } from './components/Message';
@@ -15,6 +16,11 @@ export { default as Profile } from './components/Profile';
 export { default as ResetPassword } from './components/ResetPassword';
 export { default as SignIn } from './components/SignIn';
 export { default as SignUp } from './components/SignUp';
+
+// Auth Components
+export { default as EmailVerification } from './components/auth/EmailVerification';
+export { default as PasswordReset } from './components/auth/PasswordReset';
+export { default as EmailChange } from './components/auth/EmailChange';
 
 // Contexts
 export { AuthProvider, useAuth } from './contexts/AuthContext';
