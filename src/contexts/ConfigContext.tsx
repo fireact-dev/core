@@ -26,6 +26,7 @@ interface ConfigContextType {
   auth: Auth;
   db: Firestore;
   functions: Functions;
+  name: string;
   emulators?: {
     enabled: boolean;
     host: string;
@@ -45,6 +46,7 @@ interface ConfigProviderProps {
     firebase: ConfigContextType['firebase'];
     socialLogin: ConfigContextType['socialLogin'];
     pages: ConfigContextType['pages'];
+    name: string;
     emulators?: ConfigContextType['emulators'];
   };
   children: ReactNode;
@@ -94,7 +96,8 @@ export function ConfigProvider({ config, children }: ConfigProviderProps) {
     ...config,
     auth,
     db,
-    functions
+    functions,
+    name: config.name
   };
 
   return (

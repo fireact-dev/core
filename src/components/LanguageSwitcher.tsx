@@ -1,7 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 
-export default function LanguageSwitcher() {
+interface Props {
+  backgroundColor?: string;
+  textColor?: string;
+}
+
+export default function LanguageSwitcher({ backgroundColor, textColor }: Props) {
   const { i18n } = useTranslation();
 
   const languages = useMemo(() => {
@@ -20,7 +25,7 @@ export default function LanguageSwitcher() {
     <select
       onChange={(e) => changeLanguage(e.target.value)}
       value={i18n.language}
-      className="text-sm border rounded-md px-2 py-1 bg-gray-800 text-gray-200 border-gray-700 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+      className={`text-sm border rounded-md px-2 py-1 ${backgroundColor || 'bg-gray-800'} ${textColor || 'text-gray-200'} border-gray-700 focus:outline-none focus:ring-1 focus:ring-indigo-500`}
     >
       {languages.map(({ code, name }) => (
         <option key={code} value={code}>
