@@ -13,7 +13,7 @@ export default function MobileMenuItems() {
       className={`block px-3 py-2 rounded-md text-base font-medium ${
         location.pathname === pages.dashboard
           ? 'bg-indigo-100 text-indigo-600'
-          : 'text-gray-200 hover:bg-gray-700'
+          : 'hover:bg-gray-700 hover:text-white'
       }`}
     >
       {t('dashboard')}
