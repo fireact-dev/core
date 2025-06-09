@@ -1,6 +1,6 @@
 {
   "name": "@fireact.dev/core",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A comprehensive React component library and utility collection for building Firebase-powered applications. Features authentication components, Firebase integration utilities, and TailwindCSS-styled UI elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
